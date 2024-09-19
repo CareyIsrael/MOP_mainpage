@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income and Expenses Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="D:\Mop\icon.png">
+    <style>
+        body {
+            background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%);
+            animation: gradient 5s infinite alternate;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        @keyframes gradient {
+            0% { background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%); }
+            100% { background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%); }
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #6c757d;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .table input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <header>
+            <h1>Income and Expenses Tracker</h1>
+        </header>
+        <main>
+            <div class="table-responsive mb-5">
+                <table id="data-table" class="table table-bordered table-striped">
+                    <thead>
+                        <tr id="header-row">
+                            <th>Description</th>
+                            <th>Salary</th>
+                            <th>Investments</th>
+                            <th>SIP</th>
+                            <th>Gold</th>
+                            <th>Grocery</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="Row Description" class="form-control"></td>
+                            <td><input type="number" class="form-control numeric-input"></td>
+                            <td><input type="number" class="form-control numeric-input"></td>
+                            <td><input type="number" class="form-control numeric-input"></td>
+                            <td><input type="number" class="form-control numeric-input"></td>
+                            <td><input type="number" class="form-control numeric-input"></td>
+                            <td><button class="btn btn-danger btn-sm delete-row">Delete Row</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td id="total-salary">0</td>
+                            <td id="total-investments">0</td>
+                            <td id="total-sip">0</td>
+                            <td id="total-gold">0</td>
+                            <td id="total-grocery">0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" id="total-savings">Total Savings: 0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="text-center mb-4">
+                <button id="add-row" class="btn btn-primary">Add Row</button>
+                <button id="add-column" class="btn btn-info">Add Column</button>
+                <button id="edit-column" class="btn btn-warning">Edit Column</button>
+                <button id="delete-column" class="btn btn-danger">Delete Column</button>
+                <button id="calculate-total" class="btn btn-warning">Calculate Total Savings</button>
+                <button id="save-data" class="btn btn-success">Save</button>
+            </div>
+            <div class="chart-container text-center mb-5">
+                <h3>Monthly Expenditure</h3>
+                <canvas id="expenditureChart" width="400" height="200"></canvas>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Carey Israel. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

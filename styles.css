@@ -1,0 +1,68 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%);
+    animation: gradient 10s ease infinite;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes gradient {
+    0% { background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%); }
+    100% { background: linear-gradient(135deg, #5870F1FF 0%, #5870F1FF 100%); }
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 20px auto;
+    flex: 1;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.table {
+    margin-bottom: 30px;
+}
+
+tfoot td {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+tfoot tr:nth-child(2) td {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+input.numeric-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-container {
+    margin-top: 30px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
